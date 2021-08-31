@@ -100,33 +100,8 @@ programa {
 		escreva("\n")
 	}
 
-	funcao desenho() {
-		escreva("\n\n         /@@@@@@@@@@@@@@@@@@@@@@@%                ,///  &@@@@@@@@@@@@@@@@@@( \n")  Util.aguarde(100)    
-		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.          ,///  &@@@@@@@@@@@@@@@@@@( \n")   Util.aguarde(100)    
-		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@*  @@@@@@@,       ,///  &@@@@@@@@/%@@@@@@@@( \n")  Util.aguarde(100)     
-		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@@@..@@@@@*     ,///  &@@@@@@@@/%@@@@@@@@( \n")   Util.aguarde(100)    
-		escreva("	      @@@@&*@@@@         &@@@@@@ @@@@@    ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@            @@@@@ &@@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@             .@@@@ @@@@%  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#(@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@*&@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@             @@@@@ @@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@           @@@@@# @@@@*   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("         *&&&&@@@@&*@@@@&&&&&@@@@@@@@@% @@@@@     ,///  %&&&&@@@@/%@@@@&&&&/ \n")      Util.aguarde(100) 
-		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@. @@@@@@*      ,///  &@@@@@@@@/%@@@@@@@@( \n")      Util.aguarde(100) 
-		escreva("	 /@@@@,,,,,,,,,,,,,,,,/&@@@@@@@@@         ,///  &@@@@,,,,,,,,,,@@@@( \n")      Util.aguarde(100) 
-		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@             ,///  &@@@@@@@@@@@@@@@@@@( \n\n")   Util.aguarde(100) 
-		Util.aguarde(2000)
-		limpa()
-		
-		
-	}
+	
 
-	// Menu
 	funcao menu()
 	{	
 		//variaveis
@@ -219,7 +194,7 @@ programa {
 		escreva("\n")
 	}
 
-funcao vazio finalcompra()
+	funcao vazio finalcompra()
 	{
 		cadeia pressione=""
 
@@ -377,16 +352,38 @@ funcao vazio finalcompra()
 			carrinho[i] = 0
 		}
 	}
-	
+	funcao desenho() {
+		escreva("\n\n         /@@@@@@@@@@@@@@@@@@@@@@@%                ,///  &@@@@@@@@@@@@@@@@@@( \n")  Util.aguarde(100)    
+		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.          ,///  &@@@@@@@@@@@@@@@@@@( \n")   Util.aguarde(100)    
+		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@*  @@@@@@@,       ,///  &@@@@@@@@/%@@@@@@@@( \n")  Util.aguarde(100)     
+		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@@@..@@@@@*     ,///  &@@@@@@@@/%@@@@@@@@( \n")   Util.aguarde(100)    
+		escreva("	      @@@@&*@@@@         &@@@@@@ @@@@@    ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@            @@@@@ &@@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@             .@@@@ @@@@%  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#(@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@*&@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@             @@@@@ @@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@           @@@@@# @@@@*   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("         *&&&&@@@@&*@@@@&&&&&@@@@@@@@@% @@@@@     ,///  %&&&&@@@@/%@@@@&&&&/ \n")      Util.aguarde(100) 
+		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@. @@@@@@*      ,///  &@@@@@@@@/%@@@@@@@@( \n")      Util.aguarde(100) 
+		escreva("	 /@@@@,,,,,,,,,,,,,,,,/&@@@@@@@@@         ,///  &@@@@,,,,,,,,,,@@@@( \n")      Util.aguarde(100) 
+		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@             ,///  &@@@@@@@@@@@@@@@@@@( \n\n")   Util.aguarde(100) 
+		Util.aguarde(2000)
+		limpa()	
+	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10141; 
+ * @POSICAO-CURSOR = 4338; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {total, 335, 7, 5};
+ * @SIMBOLOS-INSPECIONADOS = {total, 310, 7, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
