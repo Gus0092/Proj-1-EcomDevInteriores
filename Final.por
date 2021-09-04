@@ -100,38 +100,24 @@ programa {
 		escreva("\n")
 	}
 
-	funcao desenho() {
-		escreva("\n\n         /@@@@@@@@@@@@@@@@@@@@@@@%                ,///  &@@@@@@@@@@@@@@@@@@( \n")  Util.aguarde(100)    
-		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.          ,///  &@@@@@@@@@@@@@@@@@@( \n")   Util.aguarde(100)    
-		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@*  @@@@@@@,       ,///  &@@@@@@@@/%@@@@@@@@( \n")  Util.aguarde(100)     
-		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@@@..@@@@@*     ,///  &@@@@@@@@/%@@@@@@@@( \n")   Util.aguarde(100)    
-		escreva("	      @@@@&*@@@@         &@@@@@@ @@@@@    ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@            @@@@@ &@@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@             .@@@@ @@@@%  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#(@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@              @@@@*&@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@             @@@@@ @@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("	      @@@@&*@@@@           @@@@@# @@@@*   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
-		escreva("         *&&&&@@@@&*@@@@&&&&&@@@@@@@@@% @@@@@     ,///  %&&&&@@@@/%@@@@&&&&/ \n")      Util.aguarde(100) 
-		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@. @@@@@@*      ,///  &@@@@@@@@/%@@@@@@@@( \n")      Util.aguarde(100) 
-		escreva("	 /@@@@,,,,,,,,,,,,,,,,/&@@@@@@@@@         ,///  &@@@@,,,,,,,,,,@@@@( \n")      Util.aguarde(100) 
-		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@             ,///  &@@@@@@@@@@@@@@@@@@( \n\n")   Util.aguarde(100) 
-		Util.aguarde(2000)
-		limpa()
-		
-		
-	}
+	
 
-	// Menu
 	funcao menu()
 	{	
 		//variaveis
 		inteiro codigo[10] = {1,2,3,4,5,6,7,8,9,10}, codigoDigitado
-		cadeia produto[10] = {"Luminaria de Mesa             ","Poltrona                      ","Abajur                        ","Estante                       ","Escrivaninha                  ","Cadeira de escritório         ","Cama Box                      ","Cadeira Gamer                 ","Mesa de centro                ","Sofá                         "}
+		cadeia produto[10] = {
+			"Luminaria de Mesa             ",
+			"Poltrona                      ",
+			"Abajur                        ",
+			"Estante                       ",
+			"Escrivaninha                  ",
+			"Cadeira de escritório         ",
+			"Cama Box                      ",
+			"Cadeira Gamer                 ",
+			"Mesa de centro                ",
+			"Sofá                         "
+		}
 		inteiro quantidadeDesejada
 		caracter s, n, opcaoCompra
 
@@ -156,32 +142,33 @@ programa {
 		inteiro x=0
 		enquanto(codigoLer!= (-1)){
 			menu()
-			
-			escreva("\n")
-			
-			itensNoCarrinho()
-			
+			escreva("\n")			
+			itensNoCarrinho()			
 			escreva("Digite o código do produto a ser adicionado ao carrinho" + "\n"  + "ou aperte '0' para encerrar compra: ")
-			escreva("G5-")
+			escreva("G5-")			
 			leia(codigoLer)
 			
 				codigoLer = codigoLer -1
 				
 				se(codigoLer != -1){
-					se(estoque[codigoLer]<=10){
+					se(codigoLer>=10){
+						escreva("Desculpe, código inválido!\n")
+						Util.aguarde(4000)
+					}
+					senao se(estoque[codigoLer]<=10){
 						escreva("Qual a quantidade?: ")
 						leia(quantidade)
 	
 						se(quantidade<=estoque[codigoLer]){
 						unidade = estoque[codigoLer] - quantidade
-					
-						estoque[codigoLer] = unidade
 						carrinho[codigoLer] = carrinho[codigoLer] + quantidade
 						}
 						senao{
 							escreva("Desculpe, mas nosso estoque não possui essa quantidade\n")
+							escreva("Quantidade disponivel em estoque: ", estoque[codigoLer]) 
+							Util.aguarde(5000)
 						}
-					}
+					}					
 				}
 			senao{
 				limpa()
@@ -207,7 +194,7 @@ programa {
 		escreva("\n")
 	}
 
-funcao vazio finalcompra()
+	funcao vazio finalcompra()
 	{
 		cadeia pressione=""
 
@@ -262,7 +249,7 @@ funcao vazio finalcompra()
 			juros = valorTotal * 0.05
 		}
 		cabecalho()
-		escreva("Pagamento efetuado no valor de: "+valorFinal)
+		escreva("Pagamento efetuado no valor de: "+mat.arredondar(valorFinal,2))
 		pular()
 		linha()
 		escreva("Aguarde a emissão da nota Fiscal!!")
@@ -326,7 +313,10 @@ funcao vazio finalcompra()
 		retiraItensEstoque()
 
 		zeraCarrinho()
-
+		cadeia pressione=""
+		escreva("\n\n\nPressione 'Enter' para voltar ao menu principal.")
+		leia(pressione)
+		paginaPrincipal()
 	}
 
 	funcao cadeia retornaEspacos(real numReal, inteiro offset) {
@@ -360,19 +350,40 @@ funcao vazio finalcompra()
 	funcao vazio zeraCarrinho() {
 		para (inteiro i = 0; i < 10; i++) {
 			carrinho[i] = 0
-			estoque[i] = 10
 		}
 	}
-	
+	funcao desenho() {
+		escreva("\n\n         /@@@@@@@@@@@@@@@@@@@@@@@%                ,///  &@@@@@@@@@@@@@@@@@@( \n")  Util.aguarde(100)    
+		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.          ,///  &@@@@@@@@@@@@@@@@@@( \n")   Util.aguarde(100)    
+		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@*  @@@@@@@,       ,///  &@@@@@@@@/%@@@@@@@@( \n")  Util.aguarde(100)     
+		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@@@..@@@@@*     ,///  &@@@@@@@@/%@@@@@@@@( \n")   Util.aguarde(100)    
+		escreva("	      @@@@&*@@@@         &@@@@@@ @@@@@    ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@            @@@@@ &@@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@             .@@@@ @@@@%  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#(@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@#*@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@              @@@@*&@@@@  ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@             @@@@@ @@@@   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("	      @@@@&*@@@@           @@@@@# @@@@*   ,///       @@@@/%@@@@      \n")      Util.aguarde(100) 
+		escreva("         *&&&&@@@@&*@@@@&&&&&@@@@@@@@@% @@@@@     ,///  %&&&&@@@@/%@@@@&&&&/ \n")      Util.aguarde(100) 
+		escreva("	 /@@@@@@@@&*@@@@@@@@@@@@@@@. @@@@@@*      ,///  &@@@@@@@@/%@@@@@@@@( \n")      Util.aguarde(100) 
+		escreva("	 /@@@@,,,,,,,,,,,,,,,,/&@@@@@@@@@         ,///  &@@@@,,,,,,,,,,@@@@( \n")      Util.aguarde(100) 
+		escreva("	 /@@@@@@@@@@@@@@@@@@@@@@@@@@@             ,///  &@@@@@@@@@@@@@@@@@@( \n\n")   Util.aguarde(100) 
+		Util.aguarde(2000)
+		limpa()	
+	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10447; 
+ * @POSICAO-CURSOR = 4338; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {total, 323, 7, 5};
+ * @SIMBOLOS-INSPECIONADOS = {total, 310, 7, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
