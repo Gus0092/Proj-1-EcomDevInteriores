@@ -7,7 +7,7 @@ public class ProjetoFinal {
 	// vetores
 
 	static double valor[] = { 119.99, 799.99, 109.99, 380.99, 539.99, 649.99, 850.99, 999.99, 220.99, 950.99 };
-	static double carrinho[] = { 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 };
+	static double carrinho[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	static double estoque[] = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
 	double valorTotal = 0.0, valorFinal = 0.0, valorImposto = 0.0, imposto = 0.00, juros = 0.0, taxaCartao = 0.0;
 	int tipoPagamento = 1;
@@ -90,7 +90,7 @@ public class ProjetoFinal {
 			itensNoCarrinho();
 			System.out.print("\nDigite o código do produto a ser adicionado ao carrinho" + "\n"
 					+ "ou aperte '0' para encerrar compra: ");
-			codigoCompleto = leia.next();
+			codigoCompleto = leia.next().toUpperCase();
 
 			do {
 				for (int x = 0; x < 10; x++) {
