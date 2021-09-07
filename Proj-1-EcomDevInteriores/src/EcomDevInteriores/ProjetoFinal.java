@@ -1,9 +1,8 @@
 package EcomDevInteriores;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Carrinho {
+public class ProjetoFinal {
 
 	// vetores
 
