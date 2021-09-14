@@ -1,6 +1,7 @@
 package EcomDevInteriores;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ProjetoFinal {
@@ -33,11 +34,11 @@ public class ProjetoFinal {
 		"Abajur                       ",
 		"Estante                      ",
 		"Escrivaninha                 ",
-		"Cadeira de escritório        ",
+		"Cadeira de escritÃ³rio        ",
 		"Cama Box                     ",
 		"Cadeira Gamer                ",
 		"Mesa de centro               ",
-		"Sofá                         "
+		"SofÃ¡                         "
 	};
 	
 	static String codigo[] = { "G5-1", "G5-2", "G5-3", "G5-4", "G5-5", "G5-6", "G5-7", "G5-8", "G5-9", "G5-10" };
@@ -55,7 +56,7 @@ public class ProjetoFinal {
 		char resposta = 0;
 
 		cabecalho();
-		System.out.println("Olá, deseja comprar algo? ");
+		System.out.println("Ola, deseja comprar algo? ");
 		System.out.print("Digite S/N: ");
 		resposta = leia.next().charAt(resposta);
 		if (resposta == 'S' || resposta == 's') {
@@ -78,7 +79,7 @@ public class ProjetoFinal {
 			despede();
 			linha();
 			pular();
-			System.out.println("Até breve!!\n");
+			System.out.println("Ate breve!!\n");
 			System.exit(0);
 			
 		}
@@ -137,7 +138,7 @@ public class ProjetoFinal {
 		Scanner leia = new Scanner(System.in);
 
 		System.out.print("\n-------------------------------------------------------------------------------\n");
-		System.out.print("\n\t\tLISTA DE PRODUTOS DISPONÍVEIS\n\n");
+		System.out.print("\n\t\tLISTA DE PRODUTOS DISPONIVEIS\n\n");
 		System.out.printf("CODIGO\tPRODUTO\t\t\t\t VALOR\t\tESTOQUE\n");
 
 		for (int x = 0; x < 10; x++) {
@@ -171,9 +172,9 @@ public class ProjetoFinal {
 			menu();
 			System.out.print("\n");
 			itensNoCarrinho();
-			System.out.print("\nDigite o código do produto a ser adicionado ao carrinho" + "\n"
+			System.out.print("\nDigite o codigo do produto a ser adicionado ao carrinho" + "\n"
 					+ "ou aperte '0' para encerrar compra: ");
-			codigoCompleto = leia.next().toUpperCase();
+			codigoCompleto = leia.next().toUpperCase(Locale.ROOT);
 
 			do {
 				for (int x = 0; x < 10; x++) {
@@ -184,8 +185,8 @@ public class ProjetoFinal {
 					}
 				}
 				if (v != 0) {
-					System.out.print("Código Incorreto\n");
-					System.out.print("Digite o código do produto a ser adicionado ao carrinho" + "\n"
+					System.out.print("Codigo Incorreto\n");
+					System.out.print("Digite o codigo do produto a ser adicionado ao carrinho" + "\n"
 							+ "ou aperte '0' para encerrar compra: ");
 					codigoCompleto = leia.next();
 				}
@@ -203,7 +204,7 @@ public class ProjetoFinal {
 				try {
 					quantidade = leia.nextInt();
 				} catch (InputMismatchException erro1) {
-					System.err.println("Não é permitido inserir letras, informe apenas números inteiros!");
+					System.err.println("NÃ£o Ã© permitido inserir letras, informe apenas numeros inteiros!");
 					leia.nextLine();
 				}
 				while (quantidade < 0) {
@@ -214,8 +215,8 @@ public class ProjetoFinal {
 				if (quantidade <= estoque[codigoLer]) {
 					carrinho[codigoLer] = carrinho[codigoLer] + quantidade;
 				} else {
-					System.out.println("Desculpe, mas nosso estoque não possui essa quantidade\n");
-					System.out.println("Quantidade disponível em estoque: " + estoque[codigoLer]);
+					System.out.println("Desculpe, mas nosso estoque nÃ£o possui essa quantidade\n");
+					System.out.println("Quantidade disponivel em estoque: " + estoque[codigoLer]);
 
 				}
 			} else {
@@ -230,19 +231,19 @@ public class ProjetoFinal {
 		
         cabecalho();
         
-        System.out.printf("O valor do seu carrinho é de: R$ %.2f\n", calculaTotal());
-        System.out.printf("O valor de imposto é de:      R$ %.2f\n", calculaTotal()*0.09);
+        System.out.printf("O valor do seu carrinho e de: R$ %.2f\n", calculaTotal());
+        System.out.printf("O valor de imposto e de:      R$ %.2f\n", calculaTotal()*0.09);
 //        System.out.println("\n\n\nPressione 'Enter' para continuar.");
 //        leia(pressione)
 //        cabecalho()
         pular();
-        System.out.println("Escolha uma opção de pagamento:\n");
+        System.out.println("Escolha uma opcao de pagamento:\n");
 //        linha()
-        System.out.println("1 - À vista - Promoção de 10% de Desconto!");
+        System.out.println("1 - Ã€ vista - Promoçao de 10% de Desconto!");
         System.out.printf("    Sai por: R$ %.2f", calculaTotal()*0.9);
-        System.out.println("\n\n2 - No cartão - Acréscimo de 10% de Taxa!");
+        System.out.println("\n\n2 - No cartÃ£o - Acrescimo de 10% de Taxa!");
         System.out.printf("    Sai por: R$ %.2f", calculaTotal()*1.1);
-        System.out.println("\n\n3 - Em 2x - Acréscimo de 15% de Juros e Taxa!");
+        System.out.println("\n\n3 - Em 2x - Acrescimo de 15% de Juros e Taxa!");
         System.out.printf("    Sai por 2x de: R$ %.2f", calculaTotal()*0.575);
         System.out.printf(" Total: R$ %.2f", calculaTotal()*1.15);
 //        Total: R$"+mat.arredondar(valorTotal*1.15,2))
@@ -347,7 +348,7 @@ public class ProjetoFinal {
 	}
 	
 	public static void qrCode() throws InterruptedException {
-		System.out.println("\n\nEmissão do seu QR Code ... \n");
+		System.out.println("\n\nEmissao do seu QR Code ... \n");
 		
 		Thread.sleep(100);
 		System.out.print("\t\t\t@@@@@@@@@@@  @@@@@@@@@@@\n");
@@ -388,7 +389,7 @@ public class ProjetoFinal {
 	}
 
 	public static void despede() {
-		System.out.println("Obrigada por vir à Devs de int[e]=riores!");
+		System.out.println("Obrigada por vir a  Devs de int[e]=riores!");
 	}
 
 	public static void cabecalho() {
@@ -401,7 +402,7 @@ public class ProjetoFinal {
 	}
 
 	public static void nome() {
-		System.out.println("---Bem-vinde à Devs de int[e]=riores----");
+		System.out.println("---Bem-vinde a  Devs de int[e]=riores----");
 	}
 	public static void espacoNome(String nome) {
 		int espacos = 25 - nome.length();
